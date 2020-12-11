@@ -12,7 +12,7 @@ import com.devsuperior.hrpayroll.services.PaymentService;
 
 @RestController
 @RequestMapping(value = "/payments")
-public class PaymentBean {
+public class PaymentController {
 	
 	@Autowired
 	private PaymentService paymentService;

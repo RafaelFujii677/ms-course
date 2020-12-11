@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.hrworker.model.Worker;
-import com.devsuperior.hrworker.repositories.WorkerDAO;
+import com.devsuperior.hrworker.repositories.WorkerRepository;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/workers")
-public class WorkerBean {
+public class WorkerController {
 
 	@Autowired
-	private WorkerDAO workerDAO;
+	private WorkerRepository workerDAO;
 	
 	@GetMapping
 	public ResponseEntity<List<Worker>> findAll(){
