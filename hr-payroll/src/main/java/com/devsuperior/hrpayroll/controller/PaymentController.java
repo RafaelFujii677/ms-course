@@ -19,6 +19,13 @@ public class PaymentController {
 	
 	@GetMapping(value = "/{workerId}/days/{days}")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days){
+		
+		try {
+			Thread.sleep(3000L);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		Payment payment = paymentService.getPayment(workerId, days);
 		return ResponseEntity.ok(payment); 
 	}
