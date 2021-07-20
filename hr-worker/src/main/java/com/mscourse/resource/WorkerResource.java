@@ -14,7 +14,7 @@ import com.mscourse.model.Worker;
 import com.mscourse.repository.WorkerRepository;
 
 @RestController
-@RequestMapping(value = "/worker")
+@RequestMapping(value = "/workers")
 public class WorkerResource implements Serializable{
 	private static final long serialVersionUID = 1L;
 
