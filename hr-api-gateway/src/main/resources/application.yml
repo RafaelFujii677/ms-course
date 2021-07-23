@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: hr-api-gateway
+    cloud:
+       gateway:
+          discovery:
+            locator:
+                enabled: true
+          routes:
+           - id: hr-worker-route
+             uri: lb://hr-worker
+             predicates:
+             - Path=/hr-worker/**
+           - id: hr-payroll-route
+             uri: lb://hr-payroll
+             predicates:
+              - Path=/hr-payroll/**
+
+server:
+    port: 8765
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka  

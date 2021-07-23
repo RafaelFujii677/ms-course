@@ -18,6 +18,10 @@ public class PaymentService implements Serializable{
 
 	public Payment getPayment(Long workerId, Integer days) {
 		Worker worker = workerFeignClients.findById(workerId).getBody();
-		 return new Payment(worker.getName(), worker.getDailyIncome(), days);
+		return new Payment(worker.getName(), worker.getDailyIncome(), days);
+	}
+
+	public Payment alternativeGetPayment(Long workerId, Integer days) {
+		return new Payment("Falha", 500.0, days);
 	}
 }
