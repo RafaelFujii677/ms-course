@@ -6,6 +6,7 @@ spring:
           discovery:
             locator:
                 enabled: true
+                lower-case-service-id: true
           routes:
            - id: hr-worker-route
              uri: lb://hr-worker
