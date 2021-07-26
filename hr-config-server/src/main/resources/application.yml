@@ -8,5 +8,4 @@ spring:
     config:
       server:
         git:
-          default-label: main
           uri: https://github.com/RafaelFujii677/ms-course-configs

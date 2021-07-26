@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: hr-worker
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8888
+  profiles:
+    active:
+    - test

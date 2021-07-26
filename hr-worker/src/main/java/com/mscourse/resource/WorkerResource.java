@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,15 @@ public class WorkerResource implements Serializable{
 
 	@Autowired
 	private WorkerRepository workerRepository;
+
+	@Autowired
+	private Environment env;
+	
+	@GetMapping("/configs")
+	public ResponseEntity<String> getConfigs(){
+		System.out.println(env.getProperty("test.config"));
+		return ResponseEntity.ok(env.getProperty("test.config"));
+	}
 	
 	@GetMapping("/all")
 	public ResponseEntity<?> findAll(){
