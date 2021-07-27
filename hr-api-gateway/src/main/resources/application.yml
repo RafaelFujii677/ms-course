@@ -20,6 +20,10 @@ spring:
              uri: lb://hr-user
              predicates:
               - Path=/hr-user/**
+           - id: hr-oauth-route
+             uri: lb://hr-oauth
+             predicates:
+              - Path=/hr-oauth/**
 
 server:
     port: 8765

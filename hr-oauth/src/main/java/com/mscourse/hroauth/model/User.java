@@ -1,49 +1,29 @@
-package com.mscourse.hruser.model;
+package com.mscourse.hroauth.model;
 
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "user")
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-
 	@Email
-	@Column(unique = true)
 	private String email;
 	private String password;
-
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 	
 	public User() {}
-	public User(@NotNull User user) {
+	public User(Long id, String name, String email, String password) {
 		super();
-		this.id = user.getId();
-		this.name = user.getName();
-		this.email = user.getEmail();
-		this.password = user.getPassword();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
 	}
 	public Long getId() {
 		return id;
@@ -90,7 +70,7 @@ public class User implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
 	}
 	
 }
