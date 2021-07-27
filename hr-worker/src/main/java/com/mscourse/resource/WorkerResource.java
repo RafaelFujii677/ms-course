@@ -33,14 +33,14 @@ public class WorkerResource implements Serializable{
 	}
 	
 	@GetMapping("/all")
-	public ResponseEntity<?> findAll(){
+	public ResponseEntity<List<Worker>> findAll(){
 		List<Worker> list = workerRepository.findAll();
 		return ResponseEntity.ok(list);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> findById(@PathVariable Long id){
-		Worker obj = workerRepository.findById(id).get();
-		return ResponseEntity.ok(obj);
+	public ResponseEntity<Worker> findById(@PathVariable Long id){
+		Worker worker = workerRepository.findById(id).get();
+		return worker != null ? ResponseEntity.ok(worker) : ResponseEntity.notFound().build();
 	}
 }

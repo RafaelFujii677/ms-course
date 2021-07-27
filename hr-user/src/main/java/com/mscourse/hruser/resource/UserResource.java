@@ -32,11 +32,13 @@ public class UserResource implements Serializable{
 
 	@GetMapping("/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id){
-		return ResponseEntity.ok(userRepository.findById(id).get());
+		User user = userRepository.findById(id).get();
+		return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
 	}
 
 	@GetMapping("/search")
 	public ResponseEntity<User> findByEmail(@RequestParam String email){
-		return ResponseEntity.ok(userRepository.findByEmail(email));
+		User user = userRepository.findByEmail(email);
+		return user != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
 	}
 }
