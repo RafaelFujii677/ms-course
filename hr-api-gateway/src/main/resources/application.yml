@@ -16,6 +16,10 @@ spring:
              uri: lb://hr-payroll
              predicates:
               - Path=/hr-payroll/**
+           - id: hr-user-route
+             uri: lb://hr-user
+             predicates:
+              - Path=/hr-user/**
 
 server:
     port: 8765

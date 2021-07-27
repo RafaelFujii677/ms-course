@@ -7,5 +7,40 @@ spring:
   cloud:
     config:
       server:
+        encrypt:
+          enabled: false
         git:
-          uri: https://github.com/RafaelFujii677/ms-course-configs
+          uri: git@github.com:RafaelFujii677/ms-course-configs.git
+          ignore-local-ssh-settings: true
+          passphrase: '@Function773'
+          private-key: |
+                        -----BEGIN RSA PRIVATE KEY-----
+                        Proc-Type: 4,ENCRYPTED
+                        DEK-Info: DES-EDE3-CBC,B2B50EDC6421DB05
+
+                        DPvKk1bfyM5sBnqcyqU1d2wF0PeBYsfmNNg5SfxMkZNhhGCC0Z3kuurOO/Mv30AA
+                        bd0HRGoH8GYJR0qySzdGa0FaFI+xSN3JFMbrygxl8D8O6nSFIgoSh1Gh+gkYQNoM
+                        9E006THwX9CLvNrs1ItHvLVd5M/D3PPX23mHy+HcGYH/e+yN2ALtVlBsfudafRie
+                        JyBEyCDqI6VLv9gMVGGjaSmT2ej+Eec1E6kuwm/DZX81F8mNdT3Y+8myg1vnrI+H
+                        XcC0zgLMMwPpoJx3bqDP2cLqCKaFDi5BKDRoTzpvxPx9z2VNDM37jmmmYTWHK8eR
+                        65oDCiIK4TcD+v5cDXSmoe56a7ZByKmdiopawY5szCWiPxTWM0pCg5ZtbIyqikfZ
+                        2yHFZ41z/MmNTAzySEP4SVPEKzz7wSMUpNxrCZPok2ysTg1LnnKPr34xnFCFggRS
+                        81gFY1d9TjSxfuNmQp1E3NnCJ5C3G4pKt1MZ38Q/RGMxP4hm3SH0np3HipHeowWq
+                        VBDuzffEJktHbtJiyghcRpmDTr9kpP9mDimbUoa9bzmSvCVbdbvjHDX2pWP0OUDF
+                        ky0CkqXohPa/60AG3OW/XRdI/A0VeeIFYBl4jDVdl079+c4/DyHMXAPJKe54hTq4
+                        VNsEwD59oBrsJh3syXzE5sQofmmA7m3/DFEKo+2n0OgnW7OgIlmhVz044ULU3q3o
+                        /aQyUx+Bg5BMj7yf40HjmsPxdgC3gjiZq9+oo9zz1nVvkD8C7eG4NLM1bZkCgas8
+                        MxJVj0X7QZugAnnjJ0SCijlW4GXH8AtrL32F0NFimmULjLiDWQEx2Ug0NMWdG80F
+                        dHy8samQOA4bpgKtVVNN+XZt98c/1LODWPFMiTbbw7mRU+HVqki6LnXfCl+S89Y9
+                        aN5pgQj3edUfPT7vjHL7Io8qZs4uP5eoYOr3+NmTRqlj7vka0R7/vGihIyxDPz7I
+                        3xwn/y+ZVUb753VimHWDUoBYP0do9VzskdllSLbMw4tb5y/b502+OKG9qtsex+9v
+                        Df9q4QDGqyMQqOZ9vnJ2k/Z5N4m3A1daBY36FzGHe3YoHFpZibjFfSugzg+0fmou
+                        H4m/Vcl1SW1pVVT8mXSLCZ8M4vT4taZul3UlsIp0C+g7DaUiCsq1WFrMuKHGfJvp
+                        Vif8sQZIsVAm5wcBc2qoLhLLEq/0c9TiqgSDBJkqqo7Qvswp8+/KBrYrYBrJX088
+                        Sq5wwTZ23yWZuDquI99k+SuNMjXMo6X8OEpCLo3bAPIg/WXNhM6b/zxXRj0cL9oz
+                        c+BCYJKJAoHObOJAhKhVB9oGZtkykml68rNW/1bRBYzMVBkmAcQ3y2fMX5BDMJF4
+                        b6S9WqoxrXDj90/N4Rofa/ypp7aMot/EG6E0u8yezbXfKEHqvl7OolfJi5+wbqEo
+                        QQ54PtXhHkKS54TTcFcgDpeopDKGvX5RzIbXelInREMQTtuKHTReTFeaFR+AAPCL
+                        5OjdpDSdjLgrWb8lOzA3t95imq1dPG6KUM2LKvTYWfWMmHtBoGMJrGTLGELxbqxq
+                        r6D6oVtIDFesxJAFIDosZvq1zGRleBXw3bhtxd3RJeam4gpAGEM/HA==
+                        -----END RSA PRIVATE KEY-----
