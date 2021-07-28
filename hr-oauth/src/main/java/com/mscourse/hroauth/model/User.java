@@ -18,12 +18,20 @@ public class User implements Serializable{
 	private Set<Role> roles = new HashSet<>();
 	
 	public User() {}
-	public User(Long id, String name, String email, String password) {
+	public User(User user) {
+		this.id = user.getId();
+		this.name = user.getName();
+		this.email = user.getEmail();
+		this.password = user.getPassword();
+		this.roles = user.getRoles();
+	}
+	public User(Long id, String name, @Email String email, String password, Set<Role> roles) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.roles = roles;
 	}
 	public Long getId() {
 		return id;
@@ -54,7 +62,7 @@ public class User implements Serializable{
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, id, name, password);
+		return Objects.hash(email, id);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -65,12 +73,10 @@ public class User implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(email, other.email) && Objects.equals(id, other.id) && Objects.equals(name, other.name)
-				&& Objects.equals(password, other.password);
+		return Objects.equals(email, other.email) && Objects.equals(id, other.id);
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", roles=" + roles + "]";
 	}
-	
 }

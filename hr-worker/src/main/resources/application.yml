@@ -22,4 +22,4 @@ spring:
       path: /h2-console
   # config data.sql
   jpa:
-    defer-datasource-initialization: true
+    defer-datasource-initialization: true 

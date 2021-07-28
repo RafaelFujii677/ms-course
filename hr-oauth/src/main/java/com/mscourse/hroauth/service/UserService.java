@@ -15,4 +15,5 @@ public class UserService {
 	public User findByEmail(String email) {
 		return userFeignClient.findByEmail(email).getBody();
 	}
+
 }

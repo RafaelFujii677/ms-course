@@ -3,7 +3,9 @@ package com.mscourse.hroauth.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Role implements Serializable{
+import org.springframework.security.core.GrantedAuthority;
+
+public class Role implements Serializable, GrantedAuthority{
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
@@ -45,5 +47,9 @@ public class Role implements Serializable{
 	@Override
 	public String toString() {
 		return "Role [id=" + id + ", roleName=" + roleName + "]";
+	}
+	@Override
+	public String getAuthority() {
+		return this.roleName;
 	}
 }
