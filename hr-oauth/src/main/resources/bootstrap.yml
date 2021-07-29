@@ -1,6 +1,8 @@
 spring:
   application:
-    name: hr-worker
+    name: hr-oauth
+  profiles:
+    active: default
   cloud:
     config:
       enabled: true

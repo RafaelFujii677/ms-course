@@ -15,7 +15,7 @@ public class JwtConfiguration implements Serializable{
 	@NestedConfigurationProperty
 	private Header header = new Header();
 	private int expiration = 3600;
-	private String privateKey = "DOloBHb0GymxTqAlyrgpQlOlfIPPIUOj";
+	private String privateKey = "";
 	private String type = "encrypted";
 	
 	public static class Header{

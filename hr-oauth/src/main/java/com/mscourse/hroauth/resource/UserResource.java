@@ -21,6 +21,9 @@ public class UserResource implements Serializable{
 
 	@Autowired private UserService service;
 
+//	@Autowired
+//	private Environment env;
+
 	@GetMapping(value = "/search")
 	public ResponseEntity<User> findByEmail(@RequestParam String email){
 		try {
@@ -33,4 +36,10 @@ public class UserResource implements Serializable{
 			return ResponseEntity.internalServerError().build();
 		}
 	}
+
+//	@GetMapping("/config")
+//	public String getConfig() {
+//		return env.getProperty("private-key.config"); 
+//	}
+
 }

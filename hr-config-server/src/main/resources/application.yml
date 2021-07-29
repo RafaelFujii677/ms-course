@@ -12,6 +12,7 @@ spring:
         git:
           uri: git@github.com:RafaelFujii677/ms-course-configs.git
           ignore-local-ssh-settings: true
+          search-paths: hr-worker, hr-payroll, hr-oauth
           passphrase: '@Function773'
           private-key: |
                         -----BEGIN RSA PRIVATE KEY-----
