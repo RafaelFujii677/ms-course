@@ -54,6 +54,7 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter{
 				.addFilterAfter(new JwtTokenAuthorizationFilter(jwtConfiguration, tokenConverter), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers(jwtConfiguration.getLoginUrl()).permitAll()
+				.antMatchers("/hr-oauth/**").authenticated()
 				.antMatchers("/hr-worker/**").hasAnyRole("USER", "ADMIN")
 				.antMatchers("/hr-payroll/**").hasRole("ADMIN")
 				.antMatchers("/hr-users/**").hasRole("ADMIN")
