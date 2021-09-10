@@ -1,4 +1,4 @@
-package com.mscourse.resource;
+package com.mscourse.hrworker.resource;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mscourse.feignClients.OauthFeignClient;
-import com.mscourse.model.Worker;
-import com.mscourse.repository.WorkerRepository;
+import com.mscourse.hrworker.feignClients.OauthFeignClient;
+import com.mscourse.hrworker.model.Worker;
+import com.mscourse.hrworker.repository.WorkerRepository;
 
 @RefreshScope
 @RestController

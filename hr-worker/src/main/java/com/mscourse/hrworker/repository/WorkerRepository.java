@@ -1,8 +1,8 @@
-package com.mscourse.repository;
+package com.mscourse.hrworker.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.mscourse.model.Worker;
+import com.mscourse.hrworker.model.Worker;
 
 public interface WorkerRepository extends JpaRepository<Worker, Long>{
 

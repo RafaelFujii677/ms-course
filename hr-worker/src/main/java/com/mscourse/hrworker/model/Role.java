@@ -1,4 +1,4 @@
-package com.mscourse.model;
+package com.mscourse.hrworker.model;
 
 import java.io.Serializable;
 import java.util.Objects;

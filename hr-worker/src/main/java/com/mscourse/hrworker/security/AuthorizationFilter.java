@@ -1,3 +1,4 @@
+package com.mscourse.hrworker.security;
 //package com.mscourse.security;
 //
 //import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.mscourse.feignClients;
+package com.mscourse.hrworker.feignClients;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
