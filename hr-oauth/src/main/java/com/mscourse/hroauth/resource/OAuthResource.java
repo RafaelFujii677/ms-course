@@ -16,7 +16,7 @@ public class OAuthResource implements Serializable{
 //	private Environment env;
 
 	@GetMapping("/user")
-	public Principal getPrincipal(Principal user) {
+	public Object getPrincipal(Principal user) {
 		return user;
 	}
 

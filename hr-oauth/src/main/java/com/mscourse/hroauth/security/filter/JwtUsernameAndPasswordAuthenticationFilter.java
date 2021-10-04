@@ -39,7 +39,7 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
 		try {
-			User user = new ObjectMapper().readValue(request.getInputStream(), User.class);			
+			User user = new ObjectMapper().readValue(request.getInputStream(), User.class);
 			if(user == null) throw new UsernameNotFoundException("Não foi possível obter o usuário e a senha");
 			UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword(), user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList()));
 			usernamePasswordAuthenticationToken.setDetails(user);

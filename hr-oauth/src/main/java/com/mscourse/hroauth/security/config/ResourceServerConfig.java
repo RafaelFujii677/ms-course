@@ -22,14 +22,14 @@ import com.mscourse.hroauth.security.token.TokenConverter;
 import com.mscourse.hroauth.security.token.TokenCreator;
 
 @EnableWebSecurity
-public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter{
+public class ResourceServerConfig extends WebSecurityConfigurerAdapter{
 	private final UserDetailsService userDetailService;
 	private final JwtConfiguration jwtConfiguration;
 	private final TokenCreator tokenCreator;
 	private final TokenConverter tokenConverter;
 
 	@Autowired
-	public SecurityCredentialsConfig(UserDetailsService userDetailService, JwtConfiguration jwtConfiguration, TokenCreator tokenCreator, TokenConverter tokenConverter) {
+	public ResourceServerConfig(UserDetailsService userDetailService, JwtConfiguration jwtConfiguration, TokenCreator tokenCreator, TokenConverter tokenConverter) {
 		this.userDetailService = userDetailService;
 		this.jwtConfiguration = jwtConfiguration;
 		this.tokenCreator = tokenCreator;
@@ -54,7 +54,6 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter{
 				.addFilterAfter(new JwtTokenAuthorizationFilter(jwtConfiguration, tokenConverter), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers(jwtConfiguration.getLoginUrl()).permitAll()
-				.antMatchers("/hr-oauth/**").authenticated()
 				.antMatchers("/hr-worker/**").hasAnyRole("USER", "ADMIN")
 				.antMatchers("/hr-payroll/**").hasRole("ADMIN")
 				.antMatchers("/hr-users/**").hasRole("ADMIN")
